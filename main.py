@@ -36,11 +36,6 @@ if __name__ == '__main__':
                     if line.find('*') != -1:
                         question_correct_answer = line[1:]
 
-                        # print information
-                        print("Question:", question)
-                        print("Answer List:", answer_list)
-                        print("Correct Answer:", question_correct_answer)
-
                         # insert to database
                         per_question = {
                             "question": question,
@@ -51,6 +46,10 @@ if __name__ == '__main__':
                         }
                         if collection.find({"question": question}).count() == 0:
                             collection.insert_one(per_question)
+                            # print information
+                            print("Question:", question)
+                            print("Answer List:", answer_list)
+                            print("Correct Answer:", question_correct_answer)
 
                         # clean all
                         question = ''
