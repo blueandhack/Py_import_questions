@@ -10,7 +10,8 @@ if __name__ == '__main__':
 
     for filename in filename_list:
         filename_quiz = 'quiz'
-        if filename.find(filename_quiz) != -1 or filename.find('midterm') != -1 or filename.find('unknown') != -1:
+        if filename.find(filename_quiz) != -1 or filename.find('midterm') != -1 or filename.find(
+                'final') != -1 or filename.find('unknown') != -1:
             enc = 'iso-8859-15'
             quiz_file = open(filename, 'r', encoding=enc)
             question_begin = 0
